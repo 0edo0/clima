@@ -164,3 +164,8 @@ async function buscarTurismo(lat, lon) {
         console.warn("No se pudieron cargar los lugares turísticos en esta zona.");
     }
 }
+
+function togglePanel() {
+    const panel = document.getElementById('resultado');
+    panel.classList.toggle('collapsed');
+}
