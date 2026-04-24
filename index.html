@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViajeroPro v3 | Mapa Inmersivo</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="night-mode"> <div id="map"></div>
+
+    <div class="ui-wrapper">
+        <header class="glass-header">
+            <div class="brand">✈️ Viajero<span>Pro</span></div>
+            <div class="search-box">
+                <input type="text" id="ciudad" placeholder="Busca tu próximo destino..." onkeypress="if(event.key === 'Enter') buscarClima()">
+                <button onclick="buscarClima()">Explorar</button>
+            </div>
+        </header>
+
+        <div id="loader" class="loader" style="display:none;"></div>
+
+        <main id="resultado" class="side-panel" style="display:none;">
+            <div class="panel-content">
+                <div class="header-data">
+                    <h2 id="nombreCiudad">Ciudad</h2>
+                    <p id="horaLocal" class="accent-text">🕒 --:--</p>
+                    <p class="geo-tag">📍 <span id="latText"></span>, <span id="lonText"></span></p>
+                </div>
+
+                <div class="weather-hero">
+                    <div id="descClima" class="main-icon"></div>
+                    <div class="temp-group">
+                        <span id="temp">0</span><span class="deg">°C</span>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <small>VIENTO</small>
+                        <p id="viento">--</p>
+                    </div>
+                    <div class="stat-card">
+                        <small>HUMEDAD</small>
+                        <p id="humedad">--</p>
+                    </div>
+                    <div class="stat-card">
+                        <small>ESTADO</small>
+                        <p id="momento">--</p>
+                    </div>
+                </div>
+
+                <div class="tip-section">
+                    <h4>💡 Guía de Viaje</h4>
+                    <p id="recomendacion">Cargando sugerencias...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
